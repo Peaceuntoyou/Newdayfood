@@ -11,3 +11,18 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.slick-slide > div{
+    margin: 0 10px;
+}
+.cont{
+    background-image: url("/src/assets/laptop.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 20%;
+}
+
+  
