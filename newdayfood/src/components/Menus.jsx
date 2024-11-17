@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal from './Modal';
+import Semos from './Modals/Semos';
 import { FaBowlFood } from "react-icons/fa6";
 import { PiBowlFood } from "react-icons/pi";
 import amala from '../assets/amala.png'
@@ -25,6 +25,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Amalas from './Modals/Amalas';
+import Jollofs from './Modals/Jollofs';
 
 function Menus() {
 
@@ -34,8 +36,17 @@ function Menus() {
           }, [])
 
           const [open,setopen] = useState(false)
+          const [opens,setopens] = useState(false)
+          const [opena,setopena] = useState(false)
+
           const handleOpen = ()=>{
             setopen(true)
+          }
+          const handleOpens = ()=>{
+            setopens(true)
+          }
+          const handleOpena = ()=>{
+            setopena(true)
           }
 
   return (
@@ -81,7 +92,7 @@ function Menus() {
 
         <div className='flex justify-between pr-5 gap-28 mt-5'>
                 <div className=''>
-                    <p className='text-gray-700 font-bold mt-2'>$3.00</p>
+                    <p className='text-gray-700 font-bold mt-2'>₦3000</p>
                     <div className='w-12 bg-gradient-to-t 
                     from-[#00df9a] to-indigo-400 h-1 border'>
                     </div>
@@ -109,14 +120,14 @@ function Menus() {
 
         <div className='flex justify-between pr-5 gap-28 mt-5'>
                 <div className=''>
-                    <p className='text-gray-700 font-bold mt-2'>$3.00</p>
+                    <p className='text-gray-700 font-bold mt-2'>₦2500</p>
                     <div className='w-12 bg-gradient-to-t 
                     from-[#00df9a] to-indigo-400 h-1 border'>
                     </div>
                 </div>
                 <button className='bg-gradient-to-t from-[#00df9a] 
                 to-indigo-400 px-8 py-2 rounded-full text-white 
-                font-semibold' onClick={handleOpen}>
+                font-semibold' onClick={handleOpens}>
                     Order
                 </button>
             </div>
@@ -137,14 +148,14 @@ function Menus() {
 
         <div className='flex justify-between pr-5 gap-28 mt-5'>
                 <div className=''>
-                    <p className='text-gray-700 font-bold mt-2'>$3.00</p>
+                    <p className='text-gray-700 font-bold mt-2'>₦4000</p>
                     <div className='w-12 bg-gradient-to-t 
                     from-[#00df9a] to-indigo-400 h-1 border'>
                     </div>
                 </div>
                 <button className='bg-gradient-to-t from-[#00df9a] 
                 to-indigo-400 px-8 py-2 rounded-full text-white 
-                font-semibold' onClick={handleOpen}>
+                font-semibold' onClick={handleOpena}>
                     Order
                 </button>
             </div>
@@ -481,7 +492,10 @@ function Menus() {
 
       </div>
       </div>
-      {open && <Modal close={setopen}/>}
+      {open && <Amalas close={setopen}/>}
+      {opens && <Semos closes={setopens}/>}
+      {opena && <Jollofs closea={setopena}/>}
+      
     </div>
   )
 }
